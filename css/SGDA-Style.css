@@ -1,0 +1,68 @@
+/*
+
+	INSTRUCTIONS ---------------------------------------------------------------------------------
+  
+  1. link this stylesheet in the head of your HTML
+  	 <link href="YOUR PATH/SGDA-Style.css" rel="stylesheet" type="text/css" />
+     
+  2. Set the file name as data-theme attribute on your input
+  	 <input data-theme="SGDA-Style" />
+     
+  3. That's it!
+  
+  When you run script the style will be automatically applied.
+
+*/
+div.datedropper.SGDA-Style {
+  border-radius: 0px;
+  width: 200px;
+}
+div.datedropper.SGDA-Style .picker {
+  border-radius: 0px;
+  box-shadow: 0 0 8px 0px rgba(0, 0, 0, 0.81);
+}
+div.datedropper.SGDA-Style .pick-l {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+div.datedropper.SGDA-Style:before,
+div.datedropper.SGDA-Style .pick-submit,
+div.datedropper.SGDA-Style .pick-lg-b .pick-sl:before,
+div.datedropper.SGDA-Style .pick-m,
+div.datedropper.SGDA-Style .pick-lg-h {
+  background-color: #0078D7;
+}
+div.datedropper.SGDA-Style .pick-y.pick-jump,
+div.datedropper.SGDA-Style .pick li span,
+div.datedropper.SGDA-Style .pick-lg-b .pick-wke,
+div.datedropper.SGDA-Style .pick-btn {
+  color: #0078D7;
+}
+div.datedropper.SGDA-Style .picker,
+div.datedropper.SGDA-Style .pick-l {
+  background-color: #FFF;
+}
+div.datedropper.SGDA-Style .picker,
+div.datedropper.SGDA-Style .pick-arw,
+div.datedropper.SGDA-Style .pick-l {
+  color: black;
+}
+div.datedropper.SGDA-Style .pick-m,
+div.datedropper.SGDA-Style .pick-m .pick-arw,
+div.datedropper.SGDA-Style .pick-lg-h,
+div.datedropper.SGDA-Style .pick-lg-b .pick-sl,
+div.datedropper.SGDA-Style .pick-submit {
+  color: #FFF;
+}
+div.datedropper.SGDA-Style.picker-tiny:before,
+div.datedropper.SGDA-Style.picker-tiny .pick-m {
+  background-color: #FFF;
+}
+div.datedropper.SGDA-Style.picker-tiny .pick-m,
+div.datedropper.SGDA-Style.picker-tiny .pick-m .pick-arw {
+  color: black;
+}
+div.datedropper.SGDA-Style.picker-lkd .pick-submit {
+  background-color: #FFF;
+  color: black;
+}
