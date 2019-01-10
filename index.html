@@ -13,9 +13,10 @@
     <!-- Micon icons-->
     <link rel="stylesheet" href="./css/micon.min.css">
     <!--Custom style -->
+    <link rel="stylesheet" href="./css/style.css">
     <title>SGAD</title>
 </head>
-<body>
+<body style="background-color:gainsboro">
     <!-- Jumbotron -->
     <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/forest2.jpg);">
       <div class="text-white text-center rgba-stylish-strong py-5 px-4">
@@ -42,7 +43,6 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <a class="nav-link" href="#"> <i class="fas fa-home pr-1"></i> Home
-                <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item" >
@@ -59,13 +59,25 @@
       </nav>
       
 
-  <div class="container-fluid">
-    <div id="content">
+  <div class="container-fluid" id="content" style="min-height: 500px !important">
 
-    </div>
   </div>
 
 
+
+
+  <!--Modal Registro usuario-->
+
+  <!--Modal Registro usuario-->
+
+
+  <footer class="page-footer font-small blue">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 text-white-50">U - 2018 ATI 1:
+      <span href="https://mdbootstrap.com/bootstrap-tutorial/" class="text-white"> Sistema de gestion de aulas a distancia</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
 
 
 
@@ -78,10 +90,18 @@
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script>
+      function load() {
+        $("#content").load("newUser.html");
+      }
         $(document).ready(function(){
           $("#login").click(function(){
-            $("#content").load("login.txt");
+            $("#content").load("login.html");
           });
+          $(".nav-item").click(function(event){
+              $(".nav-item").removeClass("active"); 
+              $(this).addClass("active");           
+            }
+          );
         });
         </script>
     </body>

@@ -1,0 +1,4 @@
+.card-login {
+    width: 30%;
+    margin-left: calc(50% - (30%/2));
+}
