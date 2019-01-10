@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fluent Design Bootstrap -->
+    <link rel="stylesheet" href="./css/fluent.css">
+    <!-- Micon icons-->
+    <link rel="stylesheet" href="./css/micon.min.css">
+    <!--Custom style -->
+    <title>SGAD</title>
+</head>
+<body>
+    <!-- Jumbotron -->
+    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/forest2.jpg);">
+      <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+        <div class="py-5">
+    
+          <!-- Content -->
+          <h5 class="h5 orange-text"><i class="fas fa-book-open"></i> Aplicaciones Con La Tecnología Internet</h5>
+          <h2 class="card-title h2 my-4 py-2">Sistema de gestion de aulas a distancia</h2>
+          <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p>
+          <a class="btn btn-primary"><i class="fas fa-clone left"></i> View project</a>
+    
+        </div>
+      </div>
+    </div>   
+  <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">SGAD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExampleDark" aria-controls="navbarExampleDark"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarExampleDark">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"> <i class="fas fa-home pr-1"></i> Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#">Consultar</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#">Reservar</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#" id="login"> <i class="fas fa-user pr-1"></i> Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+
+  <div class="container-fluid">
+    <div id="content">
+
+    </div>
+  </div>
+
+
+
+
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $("#login").click(function(){
+            $("#content").load("login.txt");
+          });
+        });
+        </script>
+    </body>
+</html>
