@@ -4,7 +4,7 @@
   }
   
   .SGDA-Select select {
-    display: none; /*hide original SELECT element:*/
+  display: none; /*hide original SELECT element:*/
   }
   
   .select-selected {
