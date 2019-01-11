@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fluent Design Bootstrap -->
+    <link rel="stylesheet" href="../static/css/fluent.css">
+    <!-- Micon icons-->
+    <link rel="stylesheet" href="../static/css/micon.min.css">
+    <!-- DateDropper-->
+    <link href="../static/datedropper/datedropper.css" rel="stylesheet" type="text/css" />
+    <!-- SGDA-DateDropper -->
+    <link href="../static/css/SGDA-Style.css" rel="stylesheet" type="text/css" />
+    <!-- SGDA-DateDropper -->
+    <link href="../static/css/customSelect.css" rel="stylesheet" type="text/css" />
+
+    <!--Custom style -->
+    <link rel="stylesheet" href="../static/css/style.css">
+
+
+    <title>SGAD</title>
+</head>
+<body style="background-color:gainsboro">
+    <!-- Jumbotron -->
+    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/forest2.jpg);">
+      <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+        <div class="py-5">
+    
+          <!-- Content -->
+          <h5 class="h5 orange-text"><i class="fas fa-book-open"></i> Aplicaciones Con La Tecnología Internet</h5>
+          <h2 class="card-title h2 my-4 py-2">Sistema de gestion de aulas a distancia</h2>
+          <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p>
+          <a class="btn btn-primary"><i class="fas fa-clone left"></i> View project</a>
+    
+        </div>
+      </div>
+    </div>   
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">SGAD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExampleDark" aria-controls="navbarExampleDark"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarExampleDark">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"> <i class="fas fa-home pr-1"></i> Home
+              </a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#">Consultar</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#" id="reserve" onclick="loadReserveClassRom()">Reservar</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#" id="login"> <i class="fas fa-user pr-1"></i> Login</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+      
+
+  <div class="container-fluid" id="content" style="min-height: 500px !important">
+ <div class="card card-ReserveClassRooms mt-5 mb-5" onload="customSelect()">
+    <div class="card-body"> 
+        <h4 class="card-title font-weight-bold text-center pb-3">Reservar Aula</h4>
+        
+        <!--Aula-->
+        <div class="row mb-4">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputClassRom" class="labelReserveClassRoom">Aula: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+              <div class="SGDA-Select" style="width:50%;">
+                  <select>
+                      <option value="0">" "</option>
+                      {% for room in classrooms %}
+                      <option value="{{ room.value }}">{{ room.name }}:</option>
+                      {% endfor %}
+                  </select> 
+              </div>
+          </div>
+        </div>
+
+        <!--Aula-->
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputStartDate" class="labelReserveClassRoom">Fecha Inicio: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+            
+              <input type="text" class="form-control mb-4" id="InputStartDate" data-translate-mode="true" data-large-mode="true" data-theme="SGDA-Style"></input>
+          </div>
+        </div>
+
+        <!--Aula-->
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputEndDate" class="labelReserveClassRoom">Fecha Fin: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+              <input type="text" class="form-control mb-4" id="InputEndDate" data-translate-mode="true" data-large-mode="true" data-theme="SGDA-Style"></input>
+          </div>
+        </div>
+
+          <!--Aula-->
+        <div class="row mb-4">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputHours" class="labelReserveClassRoom">Horario: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+              <div class="SGDA-Select" style="width:50%;">
+                  <select>
+                    <option value="0">Horario:</option>
+                    <option value="1">7-9</option>
+                    <option value="2">9-11</option>
+                    <option value="3">11-1</option>
+                    <option value="4">1-3</option>
+                    <option value="5">3-5</option>
+                  </select> 
+              </div>
+          </div>
+        </div>
+
+        <!--Aula-->
+        <div class="row mb-4">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputPerodicity" class="labelReserveClassRoom">Periodicidad: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+            <div class="SGDA-Select" style="width:50%;">
+                <select>
+                    {% for room in classrooms %}
+                    
+                    {% endfor %}
+                    <option value="0">Periodicidad:</option>
+                    <option value="1">Diaria</option>
+                    <option value="2">Semanal</option>
+                    <option value="3">Mensual</option>
+                    <option value="4">Semestral</option>
+                </select> 
+            </div>
+          
+          </div>
+        </div>
+        
+        <!--Aula-->
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputPurpose" class="labelReserveClassRoom">Proposito: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </div>
+      
+        <div class="text-center mt-4 mb-4">
+          <button class="btn btn-primary">Reservar</button>
+        </div>
+    </div>
+</div>
+  </div>
+
+  <!--Modal Registro usuario-->
+
+  <!--Modal Registro usuario-->
+
+
+  <footer class="page-footer font-small blue">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3 text-white-50">U - 2018 ATI 1:
+      <span href="https://mdbootstrap.com/bootstrap-tutorial/" class="text-white"> Sistema de gestion de aulas a distancia</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../static/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <!-- dateDropper lib -->
+    <script type="text/javascript" src="../static/datedropper/datedropper.js"></script>
+    <!-- Custom JS -->
+    <script type="text/javascript" src="../static/js/customSelect.js"></script>
+
+    <script type="text/javascript" src="../static/js/general.js"></script>
+  
+    </body>
+</html>

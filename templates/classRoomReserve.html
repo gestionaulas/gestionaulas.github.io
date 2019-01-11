@@ -1,0 +1,88 @@
+<div class="card card-ReserveClassRooms mt-5 mb-5" onload="customSelect()">
+    <div class="card-body">
+        <h4 class="card-title font-weight-bold text-center pb-3">Reservar Aula</h4>
+        
+        <!--Aula-->
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputClassRom" class="labelReserveClassRoom">Aula: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+              <input type="text" class="form-control mb-4" id="InputClassRom" placeholder="Usuario"></input>
+          </div>
+        </div>
+
+        <!--Aula-->
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputStartDate" class="labelReserveClassRoom">Fecha Inicio: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+            
+              <input type="text" class="form-control mb-4" id="InputStartDate" data-translate-mode="true" data-large-mode="true" data-theme="SGDA-Style"></input>
+          </div>
+        </div>
+
+        <!--Aula-->
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputEndDate" class="labelReserveClassRoom">Fecha Fin: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+              <input type="text" class="form-control mb-4" id="InputEndDate" data-translate-mode="true" data-large-mode="true" data-theme="SGDA-Style"></input>
+          </div>
+        </div>
+
+          <!--Aula-->
+        <div class="row mb-4">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputHours" class="labelReserveClassRoom">Horario: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+              <div class="SGDA-Select" style="width:50%;">
+                  <select>
+                    <option value="0">Horario:</option>
+                    <option value="1">7-9</option>
+                    <option value="2">9-11</option>
+                    <option value="3">11-1</option>
+                    <option value="4">1-3</option>
+                    <option value="5">3-5</option>
+                  </select> 
+              </div>
+          </div>
+        </div>
+
+        <!--Aula-->
+        <div class="row mb-4">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputPerodicity" class="labelReserveClassRoom">Periodicidad: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+            <div class="SGDA-Select" style="width:50%;">
+                <select>
+                    <option value="0">Periodicidad:</option>
+                    <option value="1">Diaria</option>
+                    <option value="2">Semanal</option>
+                    <option value="3">Mensual</option>
+                    <option value="4">Semestral</option>
+                </select> 
+            </div>
+          
+          </div>
+        </div>
+        
+        <!--Aula-->
+        <div class="row">
+          <div class="col-lg-2 col-sm-12">
+              <label for="InputPurpose" class="labelReserveClassRoom">Proposito: </label>
+          </div>
+          <div class="col-lg-9 col-sm-12">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        </div>
+      
+        <div class="text-center mt-4 mb-4">
+          <button class="btn btn-primary">Reservar</button>
+        </div>
+    </div>
+</div>
