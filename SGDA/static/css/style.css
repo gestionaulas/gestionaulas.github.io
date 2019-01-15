@@ -17,6 +17,19 @@ input {
     float: right;
 }
 
+.card-profile {
+    width: 35%;
+    margin-left: calc(50% - (35%/2));
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.modify-profile {
+    padding: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .btn {
     border-radius: 0;
 }

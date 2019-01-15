@@ -12,6 +12,7 @@ function loadReserveClassRom() {
 
   $(document).ready(function(){
     $("#login").click(function(){
+      console.log("reserve");
        $("#content").load("login.html");
     });
 

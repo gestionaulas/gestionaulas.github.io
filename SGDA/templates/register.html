@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="card card-login mt-5 mb-5">
+    <!--Card content-->
+    <h4 class="card-title font-weight-bold text-center pb-3 blue text-white pt-4">Registro</h4>
+    <div class="card-body">
+      
+      <form method="POST" action="">
+        {{ form.hidden_tag()}}
+
+        <label for="InputUsuario">Usuario</label>
+        {% if form.username.errors %}
+        {{ form.username(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+            {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+            {{ form.username(class="form-control mb-4") }}
+        {% endif %}
+
+
+    
+      
+        <label for="InputEmail">Email</label>
+        {% if form.email.errors %}
+        {{ form.email(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+            {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+            {{ form.email(class="form-control mb-4") }}
+        {% endif %}
+    
+        <label for="InputPassword">Contraseña</label>
+        {% if form.password.errors %}
+        {{ form.password(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+            {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+            {{ form.password(class="form-control mb-4") }}
+        {% endif %}
+    
+        <label for="InputConfirmPassword">Confirmar</label>
+        {% if form.confirm_password.errors %}
+        {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+            {% for error in form.confirm_password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+            {{ form.confirm_password(class="form-control mb-4") }}
+        {% endif %}
+      <div class="text-center mb-4">
+          {{ form.submit(class="btn btn-primary") }}
+      </div>
+
+      </form>
+      
+      <div class="border-top pt-3 text-center">
+        <small class="text-muted">
+           ¿Ya tienes una cuenta? <a class="ml-2" href="{{ url_for('login') }}">Ingresar</a>
+        </small>
+      </div>
+
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="SuccessRegister" tabindex="-1" role="dialog" aria-labelledby="SuccessRegisterLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="SuccessRegisterLabel">¡Usuario Registrado!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Se ha registrado con exito
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock content %}

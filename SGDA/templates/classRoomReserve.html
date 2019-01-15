@@ -1,14 +1,21 @@
 <div class="card card-ReserveClassRooms mt-5 mb-5" onload="customSelect()">
-    <div class="card-body">
+    <div class="card-body"> 
         <h4 class="card-title font-weight-bold text-center pb-3">Reservar Aula</h4>
         
         <!--Aula-->
-        <div class="row">
+        <div class="row mb-4">
           <div class="col-lg-2 col-sm-12">
               <label for="InputClassRom" class="labelReserveClassRoom">Aula: </label>
           </div>
           <div class="col-lg-9 col-sm-12">
-              <input type="text" class="form-control mb-4" id="InputClassRom" placeholder="Usuario"></input>
+              <div class="SGDA-Select" style="width:50%;">
+                  <select>
+                      <option value="0"> </option>
+                      {% for room in classrooms %}
+                      <option value="{{ room.value }}">{{ room.name }}:</option>
+                      {% endfor %}
+                  </select> 
+              </div>
           </div>
         </div>
 
@@ -60,6 +67,9 @@
           <div class="col-lg-9 col-sm-12">
             <div class="SGDA-Select" style="width:50%;">
                 <select>
+                    {% for room in classrooms %}
+                    
+                    {% endfor %}
                     <option value="0">Periodicidad:</option>
                     <option value="1">Diaria</option>
                     <option value="2">Semanal</option>

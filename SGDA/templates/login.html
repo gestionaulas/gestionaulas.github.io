@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="card card-login mt-5 mb-5 pb-5">
+      <!--Card content-->
+      <h4 class="card-title font-weight-bold text-center blue text-white pb-3 pt-3">Ingresar</h4>
+      <div class="card-body">
+        {{ form.hidden_tag()}}
+        <label for="InputUsuario">Usuario</label>
+        {{ form.email(class="form-control mb-4") }}
+      
+        <label for="InputPassword">Contraseña</label>
+        {{ form.password(class="form-control mb-4") }}
+        <div class="text-center">
+          <button type="button" class="btn btn-primary">Ingresar</button>  
+        </div>
+
+        <div class="text-center pt-5 pb-3">
+          <a href="">¿Olvidaste tu Contraseña?</a>
+        </div>
+        <div class="border-top pt-3 text-center">
+            <small class="text-muted">
+               ¿No tienes una cuenta? <a class="ml-2" href="{{ url_for('register') }}">Registrar</a>
+            </small>
+          </div>
+      </div>
+   
+      <!-- Footer -->
+   
+
+    </div>
+{% endblock content %}
