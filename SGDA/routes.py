@@ -30,6 +30,18 @@ def login():
     form = LoginForm()
     return render_template('login.html', form=form)
 
+@app.route("/classRoomReserve", methods=['GET', 'POST'])
+@login_required
+def classRoomReserve():
+    form = LoginForm()
+    return render_template('classRoomReserve.html')
+
+@app.route("/modifyProfile", methods=['GET', 'POST'])
+@login_required
+def modifyProfile():
+    form = LoginForm()
+    return render_template('modifyProfile.html')
+
 @app.route("/members", methods=['GET', 'POST'])
 @login_required
 def members():
