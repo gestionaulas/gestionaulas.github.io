@@ -9,7 +9,7 @@ from flask_user import login_required
 @app.route("/")
 @app.route("/home")
 def home():
-    classrooms = db.aulas.find()
+    classrooms = db.aulas
     return render_template('home.html', classrooms=classrooms)
 
 
@@ -33,7 +33,8 @@ def login():
 @app.route("/classRoomReserve", methods=['GET', 'POST'])
 def classRoomReserve():
     form = LoginForm()
-    return render_template('classRoomReserve.html')
+    classrooms = db.aulas.find()
+    return render_template('classRoomReserve.html', classrooms=classrooms)
 
 @app.route("/modifyProfile", methods=['GET', 'POST'])
 def modifyProfile():
