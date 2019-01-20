@@ -7,12 +7,12 @@
         <!--Aula-->
         <div class="row mb-4">
           <div class="col-lg-2 col-sm-12">
-              <label for="InputClassRom" class="labelReserveClassRoom">Aula: </label>
+              <label for="InputClassRom" class="labelReserveClassRoom">Aula</label>
           </div>
           <div class="col-lg-9 col-sm-12">
               <div class="SGDA-Select" style="width:50%;">
                   <select>
-                      <option value="0"> </option>
+                      <option value="0">Aulas</option>
                       {% for room in classrooms %}
                       <option value="{{ room.value }}">{{ room.name }}:</option>
                       {% endfor %}
@@ -24,7 +24,7 @@
         <!--Aula-->
         <div class="row">
           <div class="col-lg-2 col-sm-12">
-              <label for="InputStartDate" class="labelReserveClassRoom">Fecha Inicio: </label>
+              <label for="InputStartDate" class="labelReserveClassRoom">FechaInicio</label>
           </div>
           <div class="col-lg-9 col-sm-12">
             
@@ -35,7 +35,7 @@
         <!--Aula-->
         <div class="row">
           <div class="col-lg-2 col-sm-12">
-              <label for="InputEndDate" class="labelReserveClassRoom">Fecha Fin: </label>
+              <label for="InputEndDate" class="labelReserveClassRoom">Fecha Fin</label>
           </div>
           <div class="col-lg-9 col-sm-12">
               <input type="text" class="form-control mb-4" id="InputEndDate" data-translate-mode="true" data-large-mode="true" data-theme="SGDA-Style"></input>
@@ -45,12 +45,12 @@
           <!--Aula-->
         <div class="row mb-4">
           <div class="col-lg-2 col-sm-12">
-              <label for="InputHours" class="labelReserveClassRoom">Horario: </label>
+              <label for="InputHours" class="labelReserveClassRoom">Horario</label>
           </div>
           <div class="col-lg-9 col-sm-12">
               <div class="SGDA-Select" style="width:50%;">
                   <select>
-                    <option value="0">Horario:</option>
+                    <option value="0">Horario</option>
                     <option value="1">7-9</option>
                     <option value="2">9-11</option>
                     <option value="3">11-1</option>
@@ -64,7 +64,7 @@
         <!--Aula-->
         <div class="row mb-4">
           <div class="col-lg-2 col-sm-12">
-              <label for="InputPerodicity" class="labelReserveClassRoom">Periodicidad: </label>
+              <label for="InputPerodicity" class="labelReserveClassRoom">Periodicidad</label>
           </div>
           <div class="col-lg-9 col-sm-12">
             <div class="SGDA-Select" style="width:50%;">
@@ -72,7 +72,7 @@
                     {% for room in classrooms %}
                     
                     {% endfor %}
-                    <option value="0">Periodicidad:</option>
+                    <option value="0">Periodicidad</option>
                     <option value="1">Diaria</option>
                     <option value="2">Semanal</option>
                     <option value="3">Mensual</option>
@@ -86,16 +86,40 @@
         <!--Aula-->
         <div class="row">
           <div class="col-lg-2 col-sm-12">
-              <label for="InputPurpose" class="labelReserveClassRoom">Proposito: </label>
+              <label for="InputPurpose" class="labelReserveClassRoom">Proposito</label>
           </div>
           <div class="col-lg-9 col-sm-12">
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
         </div>
-      
-        <div class="text-center mt-4 mb-4">
-          <button class="btn btn-primary">Reservar</button>
-        </div>
+	 
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalLabel2">Reserva Exitosa</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	      </div>
+	      <div class="modal-body">
+		Su reserva ha sido realizada con éxito. Recibira un correo de confirmación.
+	      </div>
+	      <div class="modal-footer">
+		<button onclick="location.href='{{url_for('classRoomReserve')}}'" type="button" class="btn btn-default" data-dismiss="modal">Hacer otra reserva</button>
+		<button onclick="location.href='{{url_for('home')}}'" type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="text-center mt-4 mb-4">
+	  <!-- Button trigger modal -->
+	  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+	    Reservar
+	  </button>
+	</div>
     </div>
 
 </div>
