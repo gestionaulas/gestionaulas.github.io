@@ -9,6 +9,7 @@ from flask_user import login_required
 @app.route("/")
 @app.route("/home")
 def home():
+    classrooms = db.aulas
     return render_template('home.html', classrooms=classrooms)
 
 
@@ -29,8 +30,18 @@ def login():
     form = LoginForm()
     return render_template('login.html', form=form)
 
+@app.route("/classRoomReserve", methods=['GET', 'POST'])
+def classRoomReserve():
+    form = LoginForm()
+    classrooms = db.aulas.find()
+    return render_template('classRoomReserve.html', classrooms=classrooms)
+
+@app.route("/modifyProfile", methods=['GET', 'POST'])
+def modifyProfile():
+    form = LoginForm()
+    return render_template('modifyProfile.html')
+
 @app.route("/members", methods=['GET', 'POST'])
-@login_required
 def members():
     form = LoginForm()
     return render_template('login.html', form=form)

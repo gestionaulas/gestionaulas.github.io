@@ -33,3 +33,29 @@ input {
 .btn {
     border-radius: 0;
 }
+
+.tweetsContainer {
+    padding-top: 5px;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    box-shadow: 1px 1px 2px grey;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.tweet-user-info, .tweet-user-data, .tweet-user-img {
+    display: inline-block;
+}
+
+.tweet-user-img {
+    margin-bottom: 21px;
+}
+
+.tweet-user-data {
+    margin-left: 5px;
+}
+
+.tweets-body {
+    overflow-y: scroll;
+}
