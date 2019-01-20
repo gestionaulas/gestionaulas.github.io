@@ -34,24 +34,6 @@ app.config.from_object(__name__+'.ConfigClass')
 client = MongoClient('localhost', 27017)
 db = client['sgda']
 bcrypt = Bcrypt(app)
-db = MongoEngine(app)
-
-class User(db.Document, UserMixin):
-        active = db.BooleanField(default=True)
-
-        # User authentication information
-        username = db.StringField(default='')
-        password = db.StringField()
-
-        # User information
-        first_name = db.StringField(default='')
-        last_name = db.StringField(default='')
-
-        # Relationships
-        roles = db.ListField(db.StringField(), default=[])
-
-user_manager = UserManager(app, db, User)
-app.session_interface = MongoEngineSessionInterface(db)
 
 
 from SGDA import routes
