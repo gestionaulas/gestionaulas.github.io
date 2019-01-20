@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="../static/img/favicon.ico">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -27,22 +28,20 @@
 </head>
 <body style="background-color:gainsboro">
     <!-- Jumbotron -->
-    <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/forest2.jpg);">
-      <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+    <div class="card card-image" style="background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/IevwMJs/videoblocks-low-poly-background-dark-gray_sybsaxouf_thumbnail-full01.png);">
+      <div class="text-white text-center rgba-stylish-strong py-0 px-0">
         <div class="py-5">
     
           <!-- Content -->
-          <h5 class="h5 orange-text"><i class="fas fa-book-open"></i> Aplicaciones Con La Tecnología Internet</h5>
-          <h2 class="card-title h2 my-4 py-2">Sistema de gestion de aulas a distancia</h2>
-          <p class="mb-4 pb-2 px-md-5 mx-md-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur obcaecati vero aliquid libero doloribus ad, unde tempora maiores, ullam, modi qui quidem minima debitis perferendis vitae cumque et quo impedit.</p>
-          <a class="btn btn-primary"><i class="fas fa-clone left"></i> View project</a>
-    
+          <h5 class="h5 orange-text"><i class="fas fa-book-open"></i> Aplicaciones con La Tecnología Internet</h5>
+          <h2 class="card-title h2 my-4 py-2">Sistema de gestión de aulas a distancia</h2>
+          <p class="mb-4 pb-2 px-md-5 mx-md-5">Bienvenido al sistema de gestión de aulas en donde podras consultar el estado de las aulas de la Escuela de Computación y realizar reservas de las mismas.</p>    
         </div>
       </div>
     </div>   
   <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">SGAD</a>
+        <a class="navbar-brand" href="{{ url_for('home') }}">SGAD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExampleDark" aria-controls="navbarExampleDark"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -55,13 +54,10 @@
               </a>
             </li>
             <li class="nav-item" >
-              <a class="nav-link" href="#">Consultar</a>
+              <a class="nav-link" href="{{ url_for('classRoomReserve') }}" id="reserve" onclick="loadReserveClassRom()">Reservar</a>
             </li>
             <li class="nav-item" >
-              <a class="nav-link" href="#" id="reserve" onclick="loadReserveClassRom()">Reservar</a>
-            </li>
-            <li class="nav-item" >
-              <a class="nav-link" href="{{ url_for('login') }}" id="login"> <i class="fas fa-user pr-1"></i> Login</a>
+              <a class="nav-link" href="{{ url_for('login') }}" id="login"> <i class="fas fa-user pr-1"></i>Login</a>
             </li>
           </ul>
         </div>

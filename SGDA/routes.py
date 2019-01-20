@@ -21,7 +21,7 @@ def register():
         username = form.username.data
         password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         db.users.insert_one({ "email":email, "username":username, "password":password, "profile":"student"})  
-        flash(f'Account created for {form.username.data}!', 'success')
+        
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
@@ -46,10 +46,16 @@ def members():
     form = LoginForm()
     return render_template('login.html', form=form)
 
+
 @app.route("/classrom/reserve/historial", methods=['GET', 'POST'])
 def mereserveHistorialmbers():
     form = LoginForm()
     return render_template('reserveHistorial.html', form=form)
+
+@app.route("/cargarAulas", methods=['GET', 'POST'])
+def cargarAulas():
+    form = LoginForm()
+    return render_template('cargarAulas.html', form=form)
 
 @app.route("/recoverPassword", methods=['GET', 'POST'])
 def recoverPassword():
