@@ -51,4 +51,12 @@ def mereserveHistorialmbers():
     form = LoginForm()
     return render_template('reserveHistorial.html', form=form)
 
+@app.route("/recoverPassword", methods=['GET', 'POST'])
+def recoverPassword():
+    form = LoginForm()
+    return render_template('recoverPassword.html', form=form)
 
+@app.route("/userProfile", methods=['GET', 'POST'])
+def userProfile():
+    form = LoginForm()
+    return render_template('userprofile.html', form=form)
