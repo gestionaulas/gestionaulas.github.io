@@ -19,10 +19,6 @@
         {% else %}
             {{ form.username(class="form-control mb-4") }}
         {% endif %}
-
-
-    
-      
         <label for="InputEmail">Email</label>
         {% if form.email.errors %}
         {{ form.email(class="form-control form-control-lg is-invalid") }}

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for, flash, redirect, jsonify
-from SGDA import app, db, bcrypt
+from SGDA import app, db, bcrypt, role
 from SGDA.forms import RegistrationForm, LoginForm
 from flask_bcrypt import Bcrypt
 from flask_user import login_required
@@ -10,7 +10,7 @@ from flask_user import login_required
 @app.route("/home")
 def home():
     classrooms = db.aulas
-    return render_template('home.html', classrooms=classrooms)
+    return render_template('home.html', classrooms=classrooms, role=role)
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -21,20 +21,26 @@ def register():
         username = form.username.data
         password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         db.users.insert_one({ "email":email, "username":username, "password":password, "profile":"student"})  
-        
+     
         return redirect(url_for('login'))
-    return render_template('register.html', form=form)
+    return render_template('register.html', form=form, role=role)
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    return render_template('login.html', form=form)
+    username = form.email.data
+    global role
+    if (username == "admin"):
+        role = username
+        return render_template('home.html', role=username)
+    return render_template('login.html', form=form, role = role )
 
 @app.route("/classRoomReserve", methods=['GET', 'POST'])
 def classRoomReserve():
     form = LoginForm()
+    global role
     classrooms = db.aulas.find()
-    return render_template('classRoomReserve.html', classrooms=classrooms)
+    return render_template('classRoomReserve.html', classrooms=classrooms, role=role)
 
 @app.route("/modifyProfile", methods=['GET', 'POST'])
 def modifyProfile():
@@ -57,6 +63,7 @@ def cargarAulas():
     form = LoginForm()
     return render_template('cargarAulas.html', form=form)
 
+
 @app.route("/recoverPassword", methods=['GET', 'POST'])
 def recoverPassword():
     form = LoginForm()
@@ -66,3 +73,11 @@ def recoverPassword():
 def userProfile():
     form = LoginForm()
     return render_template('userprofile.html', form=form)
+
+
+@app.route("/logout", methods=['GET', 'POST'])
+def logout():
+    form = LoginForm()
+    global role
+    role = "none"
+    return redirect(url_for('home'))

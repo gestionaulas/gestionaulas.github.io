@@ -5,7 +5,6 @@ from flask_user import UserManager, UserMixin
 from flask_login import LoginManager
 from flask_mongoengine import MongoEngine, MongoEngineSessionInterface
 
-
 class ConfigClass(object):
     """ Flask application config """
 
@@ -35,6 +34,7 @@ app.static_folder = 'static'
 client = MongoClient('localhost', 27017)
 db = client['sgda']
 bcrypt = Bcrypt(app)
-
+global role 
+role = "none"
 
 from SGDA import routes
