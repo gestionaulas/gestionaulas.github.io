@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div style="margin-top: 1%">
+  <ul class="nav nav-tabs nav-fill fluent-tabs" id="exampleTabsFill" role="tablist" style="margin-bottom: 0px">
+  <li class="nav-item">
+    <a class="nav-link active" id="exampleHomeFill" data-toggle="tab" href="#linkHomeFill" role="tab" aria-controls="linkHomeFill"
+      aria-selected="true">Indicador 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="exampleProfileFill" data-toggle="tab" href="#linkProfileFill" role="tab" aria-controls="linkProfileFill"
+      aria-selected="false">Indicador 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="exampleContactFill" data-toggle="tab" href="#linkContactFill" role="tab" aria-controls="linkContactFill"
+      aria-selected="false">Indicador 3</a>
+  </li>
+</ul>
+<div class="tab-content" id="exampleTabsContentFill">
+  <div class="tab-pane fade show active" id="linkHomeFill" role="tabpanel" aria-labelledby="exampleHomeFill" style="margin-bottom: 0px">
+    <center>
+      <div class="card" >
+      <!--Card content-->
+      <div class="card-body">
+        
+        <!--Title-->
+        <h4 class="card-title font-weight-bold">Solicitudes de reserva aprobadas/rechazadas</h4>
+        <!--Text-->
+        <span class="badge badge-secondary my-2">Indicador 1</span>
+        <p class="card-text">Cantidad de veces en que la secretaria aprobó o rechazó solicitudes de reserva de aula.</p>
+
+        <!--Card image-->
+      <div class="view">
+        <img src="../static/img/indicadores.png" class="card-img-botton" alt="photo">
+      </div>
+
+    </div>
+      </div>
+    </center>
+  </div>
+  <div class="tab-pane fade" id="linkProfileFill" role="tabpanel" aria-labelledby="exampleProfileFill">
+    <center>
+      <div class="card">
+        <!--Card content-->
+        <div class="card-body">
+          
+          <!--Title-->
+          <h4 class="card-title font-weight-bold">Cantidad de veces de uso de aulas</h4>
+          <!--Text-->
+          <span class="badge badge-secondary my-2">Indicador 2</span>
+          <p class="card-text">Cantidad de veces en que se reservó un aula.</p>
+
+          <!--Card image-->
+        <div class="view">
+          <img src="../static/img/indicadores.png" class="card-img-botton" alt="photo">
+        </div>
+
+      </div>
+    </div>
+  </center>
+  </div>
+  <div class="tab-pane fade" id="linkContactFill" role="tabpanel" aria-labelledby="exampleContactFill">
+      <center>
+      <div class="card">
+        <!--Card content-->
+        <div class="card-body">
+          
+          <!--Title-->
+          <h4 class="card-title font-weight-bold">Usuarios con más aulas reservadas</h4>
+          <!--Text-->
+          <span class="badge badge-secondary my-2">Indicador 3</span>
+          <p class="card-text">Usuarios que han reservado más aulas hasta este momento.</p>
+
+          <!--Card image-->
+        <div class="view">
+          <img src="../static/img/indicadores.png" class="card-img-botton" alt="photo">
+        </div>
+
+      </div>
+    </div>
+  </center>
+  </div>
+</div>
+</div>
+
+
+<!--Card-->
+
+
+<!--/.Card-->
+
+  {% endblock content %}
