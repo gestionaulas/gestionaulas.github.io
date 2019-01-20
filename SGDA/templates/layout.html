@@ -7,17 +7,17 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Fluent Design Bootstrap -->
-    <link rel="stylesheet" href="../static/css/fluent.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fluent.css')}}">
     <!-- Micon icons-->
-    <link rel="stylesheet" href="../static/css/micon.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/micon.min.css')}}">
     <!-- DateDropper-->
-    <link href="../static/datedropper/datedropper.css" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='datedropper/datedropper.css')}}" rel="stylesheet" type="text/css" />
     <!-- SGDA-DateDropper -->
-    <link href="../static/css/SGDA-Style.css" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='css/SGDA-Style.css')}}" rel="stylesheet" type="text/css" />
     <!-- SGDA-DateDropper -->
-    <link href="../static/css/customSelect.css" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='css/customSelect.css')}}" rel="stylesheet" type="text/css" />
 
     <!--Custom style -->
     <link rel="stylesheet" href="../static/css/style.css">
@@ -82,6 +82,8 @@
       {% endwith %} -->
       {% block content %}{% endblock %}
       
+  
+      
   </div>
   
 
@@ -103,17 +105,17 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="../static/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../static/js/popper.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
     <!-- dateDropper lib -->
-    <script type="text/javascript" src="../static/datedropper/datedropper.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='datedropper/datedropper.js')}}"></script>
     <!-- Custom JS -->
-    <script type="text/javascript" src="../static/js/customSelect.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/customSelect.js')}}"></script>
 
-    <script type="text/javascript" src="../static/js/general.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/general.js')}}"></script>
   
     </body>
 </html>

@@ -31,6 +31,7 @@ class ConfigClass(object):
 
 app = Flask(__name__)
 app.config.from_object(__name__+'.ConfigClass')
+app.static_folder = 'static'
 client = MongoClient('localhost', 27017)
 db = client['sgda']
 bcrypt = Bcrypt(app)

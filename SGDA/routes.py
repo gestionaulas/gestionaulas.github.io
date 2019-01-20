@@ -46,5 +46,9 @@ def members():
     form = LoginForm()
     return render_template('login.html', form=form)
 
+@app.route("/classrom/reserve/historial", methods=['GET', 'POST'])
+def mereserveHistorialmbers():
+    form = LoginForm()
+    return render_template('reserveHistorial.html', form=form)
 
 
