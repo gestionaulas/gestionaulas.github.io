@@ -65,6 +65,9 @@
 
 
             {% if role == "admin" or role == "secretary" %}
+	    <li class="nav-item">
+                <a href="{{ url_for('userRequests') }}" class="nav-link">Solicitudes de Reserva</a>
+            </li>
             <li class="nav-item">
                 <a href="{{ url_for('indicators') }}" class="nav-link">Indicadores</a>
             </li>

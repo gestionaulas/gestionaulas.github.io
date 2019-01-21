@@ -45,14 +45,39 @@
             <label for="InputPassword">Correo: </label>
             <input type="password" class="form-control mb-4" id="InputPassword" placeholder="example@example.com"></input>
 
-            <label for="InputPassword">Telefono: </label>
+            <label for="InputPassword">Teléfono: </label>
             <input type="password" class="form-control mb-4" id="InputPassword" placeholder="Escuela"></input>
 
-            <label for="InputPassword">Direccion: </label>
+            <label for="InputPassword">Dirección: </label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
 
             <div class="text-center pt-4 mb-3">
-              <button class="btn btn-primary btn-sm">Actualizar Datos</button>
+               <!-- Modal Usuario no registrado -->
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalLabel2">Confirmación</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	      </div>
+	      <div class="modal-body">
+		Se ha actualizado éxitosamente.
+	      </div>
+	      <div class="modal-footer">
+		<button onclick="#" type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="text-center mt-4 mb-4">
+	  <!-- Button trigger modal -->
+	  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+	    Actualizar Datos
+	  </button>
+	</div>
             </div>
         </div>
       </div>
@@ -76,7 +101,33 @@
           <input type="password" class="form-control mb-4" id="InputPassword" placeholder="Contraseña"></input>
 
           <div class="text-center mb-3">
-            <button class="btn btn-primary btn-sm">Actualizar Contraseña</button>
+            <!-- Modal Usuario no registrado -->
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalLabel2">Confirmación</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	      </div>
+	      <div class="modal-body">
+		Se ha actualizado éxitosamente.
+	      </div>
+	      <div class="modal-footer">
+		<button onclick="#" type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="text-center mt-4 mb-4">
+	  <!-- Button trigger modal -->
+	  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+	    Actualizar Contraseña
+	  </button>
+	</div>
+
           </div>
         </div>
       </div>

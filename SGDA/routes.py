@@ -69,12 +69,6 @@ def recoverPassword():
     form = LoginForm()
     return render_template('recoverPassword.html', form=form)
 
-@app.route("/userProfile", methods=['GET', 'POST'])
-def userProfile():
-    form = LoginForm()
-    return render_template('userprofile.html', form=form)
-
-
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():
     form = LoginForm()
@@ -91,3 +85,13 @@ def indicators():
 def userprofile():
     form = LoginForm()
     return render_template('userprofile.html', form=form, role=role)
+
+@app.route("/userRequests", methods=['GET', 'POST'])
+def userRequests():
+    form = LoginForm()
+    return render_template('userRequests.html', form=form, role=role)
+
+@app.route("/reserveHistorial", methods=['GET', 'POST'])
+def reserveHistorial():
+    form = LoginForm()
+    return render_template('reserveHistorial.html', form=form, role=role)
