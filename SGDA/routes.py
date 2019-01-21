@@ -95,3 +95,8 @@ def userRequests():
 def reserveHistorial():
     form = LoginForm()
     return render_template('reserveHistorial.html', form=form, role=role)
+
+@app.route("/modifyAula", methods=['GET', 'POST'])
+def modifyAula():
+    form = LoginForm()
+    return render_template('modifyAula.html', form=form, role=role)
