@@ -35,7 +35,7 @@
           <!-- Content -->
           <h5 class="h5 orange-text"><i class="fas fa-book-open"></i> Aplicaciones con La Tecnología Internet</h5>
           <h2 class="card-title h2 my-4 py-2">Sistema de gestión de aulas a distancia</h2>
-          <p class="mb-4 pb-2 px-md-5 mx-md-5">Bienvenido al sistema de gestión de aulas en donde podras consultar el estado de las aulas de la Escuela de Computación y realizar reservas de las mismas.</p>    
+          <p class="mb-4 pb-2 px-md-5 mx-md-5">Bienvenido al sistema de gestión de aulas en donde podrás consultar el estado de las aulas de la Escuela de Computación y realizar reservas de las mismas.</p>    
         </div>
       </div>
     </div>   
@@ -57,12 +57,16 @@
               <a class="nav-link" href="{{ url_for('classRoomReserve') }}" id="reserve" onclick="loadReserveClassRom()">Reservar</a>
             </li>
 
-           
-
-
-            {% if role == "admin" %}
+            {% if role == "admin"%}
             <li class="nav-item">
-                <a href="{{ url_for('login') }}" class="nav-link"> TEST</a>
+                <a href="{{ url_for('cargarAulas') }}" class="nav-link">Cargar Aulas del Semestre</a>
+            </li>
+            {% endif %}
+
+
+            {% if role == "admin" or role == "secretary" %}
+            <li class="nav-item">
+                <a href="{{ url_for('indicators') }}" class="nav-link">Indicadores</a>
             </li>
             {% endif %}
             {% if role == "none" %}
@@ -71,8 +75,12 @@
             </li>
             {% endif %}
             {% if role != "none" %}
+
+	    <li class="nav-item" >
+              <a class="nav-link" href="{{ url_for('userprofile') }}" id="user-profile"> <i class="fas fa-user pr-1"></i>Perfil</a>
+            </li>
             <li class="nav-item" >
-              <a class="nav-link" href="{{ url_for('logout') }}" id="login"> <i class="fas fa-user pr-1"></i>Logout</a>
+              <a class="nav-link" href="{{ url_for('logout') }}" id="login"> <i class="fas fa-sign-out-alt"></i>Logout</a>
             </li>
             {% endif %}
           </ul>
