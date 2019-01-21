@@ -6,7 +6,7 @@
 
             <div class="row mb-4">
                     <div class="col-lg-2 col-sm-12">
-                        <label for="InputClassRom" class="labelReserveClassRoom">Aula</label>
+                        <label for="InputClassRom" class="labelReserveClassRoom">Aula:</label>
                     </div>
                     <div class="col-lg-9 col-sm-12">
                         <div class="SGDA-Select" style="width:50%;">
@@ -16,8 +16,16 @@
                                 <option value="{{ room.value }}">{{ room.name }}:</option>
                                 {% endfor %}
                             </select> 
-                        </div>
+                        </div>{% if role == "secretary" or role == "admin" %}
+		
+		<button onclick="location.href='{{url_for('modifyAula')}}'" type="button" class="btn btn-primary" data-dismiss="modal">Modificar</button>
+		
+            
+         {% endif %}  
                     </div>
+
+       
+
                   </div>
                   
             <div id='calendar'></div>
