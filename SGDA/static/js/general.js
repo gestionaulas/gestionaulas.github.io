@@ -6,6 +6,12 @@ function load() {
     $("#content").load("newUser.html");
   }
 
+function cancelReserve(id,modal) {
+  $( "#" + id ).empty();
+  $( "#" + id ).append( "Cancelado" );
+ 
+}
+
 function loadReserveClassRom() {
       $("#content").load("classRoomReserve.html");  
 }

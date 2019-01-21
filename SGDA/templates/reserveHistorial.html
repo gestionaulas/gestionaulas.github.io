@@ -1,6 +1,61 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>
-    asdsa
-</h1>
+
+<div class="text-center mt-4 mb-4">
+        <h4>  Historial de Reserva</h4>
+</div>
+
+<table class="table table-bordered table-striped table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Aula</th>
+            <th scope="col">Encargado</th>
+            <th scope="col">Fecha Inicio</th>
+            <th scope="col">Fecha Fin</th>
+            <th scope="col">Estatus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center align-middle">PBIII</td>
+            <td class="text-center align-middle">Jim Trump</td>
+            <td class="text-center align-middle">13/01/2019</td>
+            <td class="text-center align-middle">16/01/2019</td>
+            <td class="text-center align-middle">Finalizado</td>
+          </tr>
+          <tr class="verti">
+              <td class="text-center align-middle">PBIII</td>
+              <td class="text-center align-middle">Jim Trump</td>
+              <td class="text-center align-middle">17/01/2019</td>
+              <td class="text-center align-middle">02/02/2019</td>
+              <td class="text-center align-middle" id="toCancel">
+                <div class="text-center">
+                  <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#ConfirmModal">
+                  Cancelar
+                </button>
+                </div>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+      <div class="modal fade" id="ConfirmModal" tabindex="-1" role="dialog" aria-labelledby="ConfirmModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="ConfirmModalLabel">Cancelar Reservación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ¿Esta seguro de que desesa eliminar esta Reservación?
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-danger" data-dismiss="modal">Salir</button>
+                <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal" onclick="cancelReserve('toCancel', '#ConfirmModalLabel')" >Cancelar reserva</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
 {% endblock content %}
