@@ -61,7 +61,7 @@ def mereserveHistorialmbers():
 @app.route("/cargarAulas", methods=['GET', 'POST'])
 def cargarAulas():
     form = LoginForm()
-    return render_template('cargarAulas.html', form=form)
+    return render_template('cargarAulas.html', form=form,role=role)
 
 
 @app.route("/recoverPassword", methods=['GET', 'POST'])
@@ -81,3 +81,13 @@ def logout():
     global role
     role = "none"
     return redirect(url_for('home'))
+
+@app.route("/indicators", methods=['GET', 'POST'])
+def indicators():
+    form = LoginForm()
+    return render_template('indicators.html', form=form, role=role)
+
+@app.route("/userprofile", methods=['GET', 'POST'])
+def userprofile():
+    form = LoginForm()
+    return render_template('userprofile.html', form=form, role=role)

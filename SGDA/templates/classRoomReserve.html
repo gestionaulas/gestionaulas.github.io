@@ -92,8 +92,9 @@
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
         </div>
-	 
-	<!-- Modal -->
+	
+	{% if role != "none" %} 
+	<!-- Modal Usuario registrado -->
 	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -120,6 +121,39 @@
 	    Reservar
 	  </button>
 	</div>
+
+	{% endif %}
+
+	{% if role == "none" %} 
+	<!-- Modal Usuario no registrado -->
+	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<h5 class="modal-title" id="exampleModalLabel2">Advertencia</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  <span aria-hidden="true">&times;</span>
+		</button>
+	      </div>
+	      <div class="modal-body">
+		Debe estar registrado para realizar una reserva.
+	      </div>
+	      <div class="modal-footer">
+		<button onclick="location.href='{{url_for('register')}}'" type="button" class="btn btn-default" data-dismiss="modal">Registrar</button>
+		<button onclick="location.href='{{url_for('login')}}'" type="button" class="btn btn-primary" data-dismiss="modal">Iniciar Sesion</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="text-center mt-4 mb-4">
+	  <!-- Button trigger modal -->
+	  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+	    Reservar
+	  </button>
+	</div>
+
+	{% endif %}
     </div>
 
 </div>
