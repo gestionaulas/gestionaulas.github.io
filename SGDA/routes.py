@@ -30,7 +30,7 @@ def login():
     form = LoginForm()
     username = form.email.data
     global role
-    if (username == "admin"):
+    if (username == "admin" or username == "student" or username == "secretary"):
         role = username
         return render_template('home.html', role=username)
     return render_template('login.html', form=form, role = role )
