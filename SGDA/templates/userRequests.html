@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Información de reserva</th>
+      <th scope="col">Estatus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Usuario 1</td>
+      <td>
+        Aula PBIII <br>
+        Fecha inicio: 21/01/2019 <br>
+        Fecha fin: 21/01/2019 <br>
+        Hora: 9-11am<br>
+        Periodicidad: 1 vez
+        Propósito: clases
+      </td>
+      <td>
+        <button class="btn btn-success">Aprobar</button>
+        <button class="btn btn-danger">Rechazar</button>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock content %}
