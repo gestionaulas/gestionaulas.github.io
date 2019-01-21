@@ -1,45 +1,93 @@
 {% extends "layout.html" %}
 {% block content %}
-
-<table class="table">
+<br>
+<center><h2>Solicitudes de reserva de aulas</h2></center>
+<table class="table" style="margin-top: 1%; border: 1px solid black">
   <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Usuario</th>
-      <th scope="col">Información de reserva</th>
+      <th scope="col">Encargado</th>
+      <th scope="col">Aula</th>
+      <th scope="col">Fecha inicio</th>
+      <th scope="col">Fecha fin</th>
+      <th scope="col">Hora</th>
+      <th scope="col">Periodicidad</th>
+      <th scope="col">Propósito</th>
       <th scope="col">Estatus</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Usuario 1</td>
+      <td><a href="#">Usuario 1</a></td>
+      <td>PBIII</td>
+      <td>21/01/2019</td>
+      <td>21/01/2019</td>
+      <td>9-11am</td>
+      <td>1 día</td>
+      <td>Charla</td>
       <td>
-        Aula PBIII <br>
-        Fecha inicio: 21/01/2019 <br>
-        Fecha fin: 21/01/2019 <br>
-        Hora: 9-11am<br>
-        Periodicidad: 1 vez
-        Propósito: clases
-      </td>
-      <td>
-        <button class="btn btn-success">Aprobar</button>
-        <button class="btn btn-danger">Rechazar</button>
+        <button class="btn btn-success" data-toggle="modal" data-target="#aprobado">Aprobar</button>
+        <button class="btn btn-danger" data-toggle="modal" data-target="#rechazado">Rechazar</button>
       </td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <tr>
+        <th scope="row">2</th>
+        <td><a href="#">Usuario 2</a></td>
+        <td>PAIII</td>
+        <td>23/03/2019</td>
+        <td>23/03/2019</td>
+        <td>1-3pm</td>
+        <td>7 días</td>
+        <td>Clases de EAC</td>
+        <td>
+          <button class="btn btn-success" data-toggle="modal" data-target="#aprobado">Aprobar</button>
+          <button class="btn btn-danger" data-toggle="modal" data-target="#rechazado">Rechazar</button>
+        </td>
+      </tr>
     </tr>
   </tbody>
 </table>
+
+<!-- Modal -->
+<div class="modal fade" id="aprobado" tabindex="-1" role="dialog" aria-labelledby="aprobadoLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aprobadoLabel">Aprobado</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Se ha aprobado la solicitud de reserva de aula.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="rechazado" tabindex="-1" role="dialog" aria-labelledby="rechazadoLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rechazadoLabel">Rechazado</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Se ha rechazado la solicitud de reserva de aula.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 {% endblock content %}
