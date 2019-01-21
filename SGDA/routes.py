@@ -9,7 +9,7 @@ from flask_user import login_required
 @app.route("/")
 @app.route("/home")
 def home():
-    classrooms = db.aulas
+    classrooms = db.aulas.find()
     return render_template('home.html', classrooms=classrooms, role=role)
 
 
