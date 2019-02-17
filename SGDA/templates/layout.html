@@ -23,8 +23,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fullcalendar.css')}}">
     <!--Custom style -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <!--Custom style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css')}}">
 
-
+    
 
     <title>SIGAD - Sistema de Gestión de Aulas a Distancia</title>
 </head>
@@ -42,7 +44,40 @@
       </div>
     </div>  
   <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-red">
+  <header class="header">
+
+      <div class="header-limiter">
+    
+        <h1><a href="{{ url_for('home') }}">SIG<span>AD</span></a></h1>
+    
+        <nav>
+          <a href="{{ url_for('home') }}">Inicio</a>
+          <a href="{{ url_for('classRoomReserve') }}" id="reserve" onclick="loadReserveClassRoom()">Reservar</a>
+        </nav>
+    {% if role == 'none'%}
+        <ul>
+            <li><a href="{{url_for('login')}}">Login</a></li>
+          <li><a href="{{url_for('register')}}">Sign up</a></li>
+        </ul>
+    {%else%}
+    <div class="header-user-menu">
+        <img src="static/img/2.jpg" alt="User Image"/>
+  
+        <ul>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Payments</a></li>
+          <li><a href="{{url_for('logout')}}" class="highlight">Logout</a></li>
+        </ul>
+      </div>
+    {%endif%}
+      </div>
+  </header>
+
+
+
+
+  
+   <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-red">
         <a class="navbar-brand fc-black" href="{{ url_for('home') }}">SIGAD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExampleDark" aria-controls="navbarExampleDark"
           aria-expanded="false" aria-label="Toggle navigation">
@@ -90,7 +125,7 @@
             {% endif %}
           </ul>
         </div>
-    </nav>
+    </nav>--!>
       
 
   <div class="container-fluid" id="content" style="min-height: 500px !important">
