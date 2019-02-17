@@ -25,24 +25,25 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
 
 
-    <title>SGAD</title>
+
+    <title>SIGAD - Sistema de Gestión de Aulas a Distancia</title>
 </head>
-<body style="background-color:gainsboro">
-    <!-- Jumbotron -->
-    <div class="card card-image" style="background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/IevwMJs/videoblocks-low-poly-background-dark-gray_sybsaxouf_thumbnail-full01.png);">
+
+<body>
+
+    <div class="card card-image">
       <div class="text-white text-center rgba-stylish-strong py-0 px-0">
         <div class="py-5">
-    
-          <!-- Content -->
           <h5 class="h5 orange-text"><i class="fas fa-book-open"></i> Aplicaciones con La Tecnología Internet</h5>
           <h2 class="card-title h2 my-4 py-2">Sistema de gestión de aulas a distancia</h2>
           <p class="mb-4 pb-2 px-md-5 mx-md-5">Bienvenido al sistema de gestión de aulas en donde podrás consultar el estado de las aulas de la Escuela de Computación y realizar reservas de las mismas.</p>    
+          <p class="mb-4 pb-2 px-md-5 mx-md-5">Sesión: {{role}}</p>
         </div>
       </div>
-    </div>   
+    </div>  
   <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="{{ url_for('home') }}">SGAD</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary bg-red">
+        <a class="navbar-brand fc-black" href="{{ url_for('home') }}">SIGAD</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarExampleDark" aria-controls="navbarExampleDark"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -51,21 +52,21 @@
         <div class="collapse navbar-collapse" id="navbarExampleDark">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('home')}}"> <i class="fas fa-home pr-1"></i> Home
+              <a class="nav-link fc-black" href="{{ url_for('home')}}"> <i class="fas fa-home pr-1"></i> Home
               </a>
             </li>
             <li class="nav-item" >
-              <a class="nav-link" href="{{ url_for('classRoomReserve') }}" id="reserve" onclick="loadReserveClassRom()">Reservar</a>
+              <a class="nav-link fc-black" href="{{ url_for('classRoomReserve') }}" id="reserve" onclick="loadReserveClassRoom()">Reservar</a>
             </li>
 
-            {% if role == "admin"%}
+            {% if role == "jefedpto@ciens.ucv.ve" %}
             <li class="nav-item">
-                <a href="{{ url_for('cargarAulas') }}" class="nav-link">Cargar Aulas del Semestre</a>
+                <a href="{{ url_for('cargarAulas') }}" class="nav-link fc-black">Cargar Aulas del Semestre</a>
             </li>
             {% endif %}
 
 
-            {% if role == "admin" or role == "secretary" %}
+            {% if role == "jefedpto@ciens.ucv.ve" or role == "secretaria@ciens.ucv.ve" %}
 	    <li class="nav-item">
                 <a href="{{ url_for('userRequests') }}" class="nav-link">Solicitudes de Reserva</a>
             </li>
@@ -73,12 +74,12 @@
                 <a href="{{ url_for('indicators') }}" class="nav-link">Indicadores</a>
             </li>
             {% endif %}
-            {% if role == "none" %}
+            {% if role == 'none' %}
             <li class="nav-item" >
               <a class="nav-link" href="{{ url_for('login') }}" id="login"> <i class="fas fa-user pr-1"></i>Login</a>
             </li>
             {% endif %}
-            {% if role != "none" %}
+            {% if role != 'none' %}
 
 	    <li class="nav-item" >
               <a class="nav-link" href="{{ url_for('userprofile') }}" id="user-profile"> <i class="fas fa-user pr-1"></i>Perfil</a>

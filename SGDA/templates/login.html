@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div class="card card-login mt-5 mb-5 pb-5">
-      <!--Card content-->
+
+    <div class="card card-login mt-5 mb-5 pb-5" onload="fScrollMove('div_scroll');" onunload="document.forms(0).submit()";>
+
       <h4 class="card-title font-weight-bold text-center blue text-white pb-3 pt-3">Ingresar</h4>
       <div class="card-body">
           <form method="POST" action="">
@@ -15,6 +16,11 @@
                 <button type="submit" class="btn btn-primary">Ingresar</button>  
               </div>
           </form>
+          <div class="text-center pt-3 pb-3">
+          {%if error == True%}
+            <div class="alert alert-danger" role="alert"><strong>Error: </strong>Usuario/Contraseña inválida.</a>
+          </div>
+          {%endif%}
         <div class="text-center pt-5 pb-3">
           <a href="{{ url_for('recoverPassword') }}">¿Olvidaste tu Contraseña?</a>
         </div>
@@ -24,9 +30,5 @@
             </small>
         </div>
       </div>
-   
-      <!-- Footer -->
-   
-
     </div>
 {% endblock content %}

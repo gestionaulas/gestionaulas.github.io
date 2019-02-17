@@ -12,7 +12,7 @@ function cancelReserve(id,modal) {
  
 }
 
-function loadReserveClassRom() {
+function loadReserveClassRoom() {
       $("#content").load("classRoomReserve.html");  
 }
 

@@ -13,6 +13,12 @@
   When you run script the style will be automatically applied.
 
 */
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+.card-title{
+  font-family: Karla;
+}
+
 div.datedropper.SGDA-Style {
   border-radius: 0px;
   width: 200px;

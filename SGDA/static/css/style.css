@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
 input {
     background-color: transparent !important;
 }
 .card-login {
     width: 30%;
     margin-left: calc(50% - (30%/2));
+}
+
+.card-title{
+    font-family: Karla;
 }
 
 .card-ReserveClassRooms{
@@ -15,6 +21,14 @@ input {
     font-size: 1rem;
     margin-top: 6px;
     float: right;
+}
+
+.card-image{
+    background-image: url(../img/ZenBG.png);
+}
+
+.card{
+    height: 20% !important;
 }
 
 .card-profile {
@@ -64,4 +78,43 @@ input {
     color: #fff;
     background-color:blue;
     border-color: blue;
+  }
+
+.bg-red {
+    background-color: transparent !important;
+}
+
+.navbar{
+    font-family: 'Karla';
+}
+
+.nav-link, .navbar-brand{
+    color: black !important;
+}
+
+.fc-black {
+    color: black !important;
+}
+
+
+.backbutton:hover{
+    animation-name: color-transition;
+    animation-iteration-count: 1;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes color-transition {
+    0% {
+      color: #000000;
+    }
+    
+    50% {
+      color: #2e2e2e;
+    }
+    
+    100% {
+      color: #919191;
+    }
   }
