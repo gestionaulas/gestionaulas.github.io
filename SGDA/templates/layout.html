@@ -51,26 +51,38 @@
         <h1><a href="{{ url_for('home') }}">SIG<span>AD</span></a></h1>
     
         <nav>
-          <a href="{{ url_for('home') }}">Inicio</a>
-          <a href="{{ url_for('classRoomReserve') }}" id="reserve" onclick="loadReserveClassRoom()">Reservar</a>
+            <a href="{{ url_for('home') }}">Inicio</a>
+            <a href="{{ url_for('classRoomReserve') }}" id="reserve" onclick="loadReserveClassRoom()">Reservar</a>
+          {% if role == "jefedpto@ciens.ucv.ve" %}
+            <a href="{{ url_for('cargarAulas') }}">Cargar Aulas</a>
+            {%endif%}
+          {% if role == "jefedpto@ciens.ucv.ve" or role == "secretaria@ciens.ucv.ve" %}
+            <a href="{{ url_for('userRequests') }}">Solicitudes de Reserva</a>
+
+            <a href="{{ url_for('indicators') }}">Indicadores</a>
+            <a href="{{ url_for('listaUsuarios') }}">Usuarios</a>
+          {%endif%}
         </nav>
-    {% if role == 'none'%}
-        <ul>
-            <li><a href="{{url_for('login')}}">Login</a></li>
-          <li><a href="{{url_for('register')}}">Sign up</a></li>
-        </ul>
-    {%else%}
-    <div class="header-user-menu">
-        <img src="static/img/2.jpg" alt="User Image"/>
-  
-        <ul>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Payments</a></li>
-          <li><a href="{{url_for('logout')}}" class="highlight">Logout</a></li>
-        </ul>
-      </div>
-    {%endif%}
-      </div>
+        {%if role == 'none'%}
+          <ul>
+              <li><a href="{{url_for('login')}}">Login</a></li>
+            <li><a href="{{url_for('register')}}">Registrarse</a></li>
+          </ul>
+        {%else%}
+          <div class="header-user-menu">
+            {%if 'image' in usr_data%}
+              <img src="{{usr_data['image']}}" alt="User Image"/>
+            {%else%}
+            <img src="static/img/avatar.png" alt="User Image"/>
+            {%endif%}
+              <ul>
+                <li><a href="{{url_for('userprofile')}}">Perfil</a></li>
+                <li><a href="{{url_for('reserveHistorial')}}">Reservas</a></li>
+                <li><a href="{{url_for('logout')}}" class="highlight">Logout</a></li>
+              </ul>
+          </div>
+        {%endif%}
+          </div>
   </header>
 
 

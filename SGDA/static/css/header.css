@@ -44,12 +44,16 @@
 }
 
 .header .header-limiter nav a{
-	font-size: 14px;
+	font-size: 16px;
 	display: inline-block;
-	padding: 0 5px;
+	padding: 0 10px;
 	opacity: 0.9;
 	text-decoration:none;
 	line-height: 1;
+}
+
+.header .header-limiter nav a:first-child{
+padding-left:0px;
 }
 
 .header .header-limiter nav a:hover {
@@ -63,7 +67,7 @@
 /* Login/Sign up buttons */
 
 .header .header-limiter ul {
-	font: 14px Arial, Helvetica, sans-serif;
+	font: 18px Arial, Helvetica, sans-serif;
 	list-style: none;
 	line-height: 35px;
 	float: right;
@@ -83,10 +87,12 @@
 
 .header .header-limiter ul li:last-child a {
 	font-weight: bold;
-	background-color: #3a3c3e;
 	padding: 10px 15px;
 	border-radius: 3px;
+	background-color: #8f8e8e;
 }
+
+
 
 /* Making the header responsive */
 
@@ -126,7 +132,7 @@
 	position: relative;
 	float:right;
 	background-color:#3a3c3e;
-	width:75px;
+	width:80px;
 	height:40px;
 	border-radius:2px;
 }
@@ -136,7 +142,7 @@
 	width:0;
 	height:0;
 	top: 18px;
-	left: 15px;
+	right: 15px;
 	position:absolute;
 	border:5px solid transparent;
 	border-top-color:#fff;
@@ -145,18 +151,19 @@
 .header .header-limiter .header-user-menu ul{
 	display: none;
 	font:bold 13px Arial, Helvetica, sans-serif;
-	background-color: inherit;
+	background-color: #676666;
 	list-style: none;
 	position: absolute;
 	text-align: center;
-	width: 125px;
-	top: 25px;
-	right: 0;
-	padding: 10px;
+	width: 110px;
+	top: 40px;
+	right: 0px;
+	padding: 10px 10px 10px 0px;
 	border-radius: 2px;
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
 	box-sizing: border-box;
 }
+
 
 .header .header-user-menu:active ul,
 .header .header-user-menu:hover ul,
@@ -164,8 +171,14 @@
 	display:block;
 }
 
+
+
 .header .header-user-menu ul li{
-	padding:5px;
+	padding:8px;
+}
+
+.header .header-user-menu ul li:hover{
+	background-color: #3a3838
 }
 
 .header .header-user-menu ul li a:hover{
@@ -174,6 +187,7 @@
 
 .header .header-user-menu ul li a.highlight{
 	color:#e9ac09;
+	background-color: transparent;
 }
 
 .header .header-user-menu img{
@@ -181,7 +195,7 @@
 	position:absolute;
 	top:6px;
 	max-width: 28px;
-	right:10px;
+	left:10px;
 }
 
 /* For the headers to look good, be sure to reset the margin and padding of the body */
