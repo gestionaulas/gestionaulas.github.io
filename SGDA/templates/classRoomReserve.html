@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="card card-ReserveClassRooms mt-5 mb-5 mx-auto" onload="customSelect()">
+  <form action="{{ url_for('classRoomReserve') }}" method="POST">
+
+ 
     <div class="card-body "> 
         <h4 class="card-title font-weight-bold text-center pb-3">Reservar Aula</h4>
         
@@ -11,7 +14,7 @@
           </div>
           <div class="col-lg-9 col-sm-12">
               <div class="SGDA-Select" style="width:50%;">
-                  <select>
+                  <select name="classRoom">
                       <option value="0">Aulas</option>
                       {% for room in classrooms %}
                       <option value="{{ room.value }}">{{ room.name }}:</option>
@@ -28,7 +31,7 @@
           </div>
           <div class="col-lg-9 col-sm-12">
             
-              <input type="text" class="form-control mb-4" id="InputStartDate" data-translate-mode="true" data-large-mode="true" data-theme="SGDA-Style"></input>
+              <input type="text" class="form-control mb-4" name="startDate" id="InputStartDate" data-translate-mode="true" data-large-mode="true" data-theme="SGDA-Style"></input>
           </div>
         </div>
 
@@ -38,7 +41,7 @@
               <label for="InputEndDate" class="labelReserveClassRoom">Fecha Fin</label>
           </div>
           <div class="col-lg-9 col-sm-12">
-              <input type="text" class="form-control mb-4" id="InputEndDate" data-translate-mode="true" data-large-mode="true" data-theme="SGDA-Style"></input>
+              <input type="text" class="form-control mb-4"  name="endDate"  id="InputEndDate" data-translate-mode="true" data-large-mode="true" data-theme="SGDA-Style"></input>
           </div>
         </div>
 
@@ -49,7 +52,7 @@
           </div>
           <div class="col-lg-9 col-sm-12">
               <div class="SGDA-Select" style="width:50%;">
-                  <select>
+                  <select name="horario">
                     <option value="0">Horario</option>
                     <option value="1">7-9</option>
                     <option value="2">9-11</option>
@@ -68,7 +71,7 @@
           </div>
           <div class="col-lg-9 col-sm-12">
             <div class="SGDA-Select" style="width:50%;">
-                <select>
+                <select name="perodicity" >
                     {% for room in classrooms %}
                     
                     {% endfor %}
@@ -89,7 +92,7 @@
               <label for="InputPurpose" class="labelReserveClassRoom">Proposito</label>
           </div>
           <div class="col-lg-9 col-sm-12">
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              <textarea class="form-control" name="purpose"  id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
         </div>
 	
@@ -117,7 +120,7 @@
 
 	<div class="text-center mt-4 mb-4">
 	  <!-- Button trigger modal -->
-	  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+	  <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
 	    Reservar
 	  </button>
 	</div>
@@ -155,6 +158,6 @@
 
 	{% endif %}
     </div>
-
+  </form>
 </div>
 {% endblock content %}

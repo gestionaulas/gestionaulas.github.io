@@ -32,7 +32,12 @@ function loadReserveClassRoom() {
         center: 'title',
         right: 'agendaWeek'
       },
-      events: 'https://fullcalendar.io/demo-events.json'
+      events: {
+				url: 'horarios',
+				error: function() {
+        },
+      timeFormat: 'h(:mm)'
+      }
     });
     $(".nav-item").click(function(event){
       $(".nav-item").removeClass("active"); 
