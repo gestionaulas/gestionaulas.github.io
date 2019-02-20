@@ -72,8 +72,8 @@
           </ul>
         {%else%}
           <div class="header-user-menu">
-            {%if 'image' in usr_data%}
-              <img src="{{usr_data['image']}}" alt="User Image"/>
+            {%if usr_data['imagen'] != ''%}
+              <img src="{{usr_data['imagen']}}" alt="User Image"/>
             {%else%}
             <img src="static/img/avatar.png" alt="User Image"/>
             {%endif%}

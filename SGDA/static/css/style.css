@@ -28,7 +28,7 @@ input {
 }
 
 .card{
-    height: 20% !important;
+    height: inherit !important;
 }
 
 .card-profile {
@@ -107,8 +107,9 @@ input {
     animation-timing-function: ease-in-out;
 }
 
-#imagen{
+.imagen{
     border-radius: 50%;
+    width:100%;
 }
 
 @keyframes color-transition {

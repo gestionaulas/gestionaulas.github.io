@@ -15,8 +15,9 @@
           </div>
           <!-- Card image -->
           <div class="w-50 mx-auto position-relative ">
-            <img class="card-img-top" src="../static/img/avatar.png" alt="Card image" id="imagen">
-          </div>
+
+              <img class="card-img-top avatar imagen" src="../static/img/avatar.png" alt="Card image">
+       </div>
         </div>
         <!-- Card body -->
         <div class="card-body text-center mb-3">
@@ -27,7 +28,9 @@
     </div>
     </div>
   
+    
   
+
     <!-- Informacion personal -->
     <div class="col-lg-4 col-sm-12">
       <div class="card mb-4">
@@ -35,48 +38,44 @@
             <h4 class="card-title pt-2 pb-0 mb-2 text-white font-weight-bold">Información Personal</h5>
         </div>
         <div class="card-body">
-            <label for="InputPassword">Nombre: </label>
-            <input type="password" class="form-control mb-4" id="InputPassword" placeholder="Nombre"></input>
+        <form method="POST" action="">
+        {{ form.hidden_tag()}}
+        <label for="Nombre">Nombre: </label>
+            {{ form.nombre(class="form-control mb-4", placeholder="Nombre", value=usr_data['nombre']) }}
+        <label for="Apellido">Apellido: </label>
+            {{ form.apellido(class="form-control mb-4", placeholder="Apellido", value=usr_data['apellido']) }}
+        <label for="Username">Nombre de usuario: </label>
+            {{ form.username(class="form-control mb-4", placeholder="Ingrese un nombre de usuario", value=usr_data['username']) }}
+        <label for="Correo">Correo: </label>
+            {{ form.email(class="form-control mb-4", placeholder="Correo", value=usr_data['email']) }}
+        <label for="tlf">Teléfono: </label>
+            {{ form.telefono(class="form-control mb-4", placeholder="Teléfono", value=usr_data['telefono']) }}
+        <label for="direccion">Dirección: </label>
+           {{ form.direccion(class="form-control", placeholder="Dirección", value=usr_data['direccion']) }}  
+        <div class="text-center mb-4">
+            {{ form.actualizar(class="btn btn-primary" )}}
+        </div>
+      <!--
+	  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" onclick=updatedb()>
+        Actualizar Datos
+      </button>
+        <label for="Nombre">Nombre: </label>
+      <input type="text" class="form-control mb-4" id="Nombre" placeholder="Nombre" value="{{usr_data['nombre']}}"></input>
 
-            <label for="InputPassword">Apellido: </label>
-            <input type="password" class="form-control mb-4" id="InputPassword" placeholder="Apellido"></input>
+      <label for="Apellido">Apellido: </label>
+      <input type="text" class="form-control mb-4" id="Apellido" placeholder="Apellido" value="{{usr_data['apellido']}}"></input>
 
-            <label for="InputPassword">Correo: </label>
-            <input type="password" class="form-control mb-4" id="InputPassword" placeholder="example@example.com"></input>
+      <label for="Correo">Correo: </label>
+      <input type="text" class="form-control mb-4" id="Correo" placeholder="example@example.com" value="{{usr_data['email']}}"></input>
 
-            <label for="InputPassword">Teléfono: </label>
-            <input type="password" class="form-control mb-4" id="InputPassword" placeholder="Escuela"></input>
+      <label for="tlf">Teléfono: </label>
+      <input type="text" class="form-control mb-4" id="tlf" placeholder="Ingrese su número de teléfono" value="{{usr_data['telefono']}}"></input>
 
-            <label for="InputPassword">Dirección: </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <label for="direccion">Dirección: </label>
+      <textarea class="form-control" id="direccion" rows="3" placeholder="Ingrese su dirección de residencia"></textarea>
 
-            <div class="text-center pt-4 mb-3">
-               <!-- Modal Usuario no registrado -->
-	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-		<h5 class="modal-title" id="exampleModalLabel2">Confirmación</h5>
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		  <span aria-hidden="true">&times;</span>
-		</button>
-	      </div>
-	      <div class="modal-body">
-		Se ha actualizado éxitosamente.
-	      </div>
-	      <div class="modal-footer">
-		<button onclick="#" type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-
-	<div class="text-center mt-4 mb-4">
-	  <!-- Button trigger modal -->
-	  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
-	    Actualizar Datos
-	  </button>
-	</div>
+      <div class="text-center pt-4 mb-3">-->
+      </form>
             </div>
         </div>
       </div>
@@ -142,6 +141,8 @@
         reader.onload = function (e) {
           $('#imagen')
             .attr('src', e.target.result)
+            .css("width","100%")
+            .css("height","20%")
         };
         reader.readAsDataURL(input.files[0]);
       }

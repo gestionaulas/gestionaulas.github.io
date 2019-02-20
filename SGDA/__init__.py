@@ -56,8 +56,8 @@ if db.usuarios.count() == 0:
     hashpass1 = bcrypt.generate_password_hash('soyjefe').decode('utf-8')
     hashpass2 = bcrypt.generate_password_hash('soysecretaria').decode('utf-8')
     usuarios_data = [
-        {"_id": 1, "email": 'jefedpto@ciens.ucv.ve', "password": hashpass1, "username": 'jefe_dpto'},
-        {"_id": 2, "email": 'secretaria@ciens.ucv.ve',"password": hashpass2, "username": 'secretaria'}
+        {"_id": 1, "email": 'jefedpto@ciens.ucv.ve', "password": hashpass1, "username": 'jefe_dpto', "nombre": "Jefe", "apellido": "Dpto","imagen":"","telefono":"","direccion":""},
+        {"_id": 2, "email": 'secretaria@ciens.ucv.ve',"password": hashpass2, "username": 'secretaria',  "nombre": "Secretaria", "apellido": "Dpto","imagen":"","telefono":"","direccion":""}
     ]
     usuarios.update(usuarios_data[0],usuarios_data[0],upsert=True)
     usuarios.update(usuarios_data[1],usuarios_data[1],upsert=True)
