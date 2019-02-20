@@ -15,14 +15,13 @@
           </div>
           <!-- Card image -->
           <div class="w-50 mx-auto position-relative ">
-            <img class="card-img-top" src="../static/img/perfil.jpg" alt="Card image">
+            <img class="card-img-top" src="../static/img/avatar.png" alt="Card image" id="imagen">
           </div>
         </div>
         <!-- Card body -->
         <div class="card-body text-center mb-3">
           <div class="text-center d-inline-block pt-5">
-              <button type="button" class="btn btn-outline-primary  btn-sm">Seleccionar foto</button>
-              <button type="button" class="btn btn-primary btn-sm">Actualizar foto</button> 
+              <input class="btn-sm" type="file" id="file" onchange="readURL(this);"/>
           </div>
         </div>
     </div>
@@ -134,4 +133,18 @@
     </div>
    
 </div>
+
+  <!-- Cambiar imagen -->
+  <script>
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $('#imagen')
+            .attr('src', e.target.result)
+        };
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+  </script>
 {% endblock content %}

@@ -46,7 +46,7 @@ class User(UserMixin, db.Document):
     password = db.StringField()
 
 
-#Conectar con base de dato
+#Conectar con base de datos
 client = MongoClient('localhost', 27017)
 db = client['sgda']
 #Verificar si DB está inicializada o no
