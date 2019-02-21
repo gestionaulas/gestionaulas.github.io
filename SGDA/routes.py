@@ -53,7 +53,7 @@ def login():
      
 @app.route("/classRoomReserve", methods=['GET', 'POST'])
 def classRoomReserve():
-    form = RegistrationForm()
+    form = RegistrationForm() 
     if(request.method == 'POST'):
         user_email = session['email']
         user_data = db.usuarios.find_one( { 'email': user_email } )
