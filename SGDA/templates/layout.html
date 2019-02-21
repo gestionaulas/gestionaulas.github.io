@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/fluent.css')}}">
     <!-- Micon icons-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/micon.min.css')}}">
+    <!-- DataTables -->
+    <link href="{{ url_for('static', filename='jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
     <!-- DateDropper-->
     <link href="{{ url_for('static', filename='datedropper/datedropper.css')}}" rel="stylesheet" type="text/css" />
     <!-- SGDA-DateDropper -->
@@ -70,8 +72,8 @@
           </ul>
         {%else%}
           <div class="header-user-menu">
-            {%if 'image' in usr_data%}
-              <img src="{{usr_data['image']}}" alt="User Image"/>
+            {%if usr_data['imagen'] != ''%}
+              <img src="{{usr_data['imagen']}}" alt="User Image"/>
             {%else%}
             <img src="static/img/avatar.png" alt="User Image"/>
             {%endif%}
@@ -192,6 +194,9 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/customSelect.js')}}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/es.js')}}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/general.js')}}"></script>
+    <!-- JQuery datatables -->
+    <script src="{{ url_for('static', filename='jquery.dataTables.min.js') }}" type="text/javascript"></script>
+
   
     </body>
 </html>

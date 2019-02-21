@@ -4,8 +4,7 @@ from SGDA.forms import RegistrationForm
 from flask_user import login_required
 from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from flask_bcrypt import Bcrypt
-from flask import jsonify
-from datetime import datetime
+
 
 @app.route("/")
 @app.route("/home")
@@ -95,7 +94,7 @@ def classRoomReserve():
     usuarios = db.usuarios
     login_user = usuarios.find_one({'email': session['email']})
     #Código para el manejo de la reserva.. conexión con mongo, crear documento, etc...
-
+ 
     if 'email' in session:
         return render_template('classRoomReserve.html', classrooms=classrooms, role = session['email'], usr_data=login_user)
     return render_template('classRoomReserve.html', classrooms=classrooms, role = 'none')
@@ -106,21 +105,18 @@ def modifyProfile():
         usuarios = db.usuarios
         login_user = usuarios.find_one({'email': session['email']})
         form = RegistrationForm()
-        return render_template('modifyProfile.html', role = session['email'], usr_data = login_user)
+        #comentario par git
+        if request.method == 'POST':
+            usuarios.update_one(
+                {'_id':login_user['_id']},
+                {'$set':{"nombre":form.nombre.data,"apellido":form.apellido.data,"email":form.email.data,"telefono":form.telefono.data,"direccion":form.direccion.data}},
+                upsert=True
+            )
+            redirect(url_for('modifyProfile'))
+        else:
+            return render_template('modifyProfile.html', role = session['email'], usr_data = login_user, usuarios = usuarios, form = form)
     return redirect(url_for('home'))
     
-
-#@app.route("/members", methods=['GET', 'POST'])
-#def members():
-#    form = RegistrationForm()
-#    return render_template('login.html', form=form)
-
-
-#@app.route("/classrom/reserve/historial", methods=['GET', 'POST'])
-#def mereserveHistorialmbers():
-#    form = RegistrationForm()
-#    return render_template('reserveHistorial.html', form=form)
-
 @app.route("/cargarAulas", methods=['GET', 'POST'])
 def cargarAulas():
     if 'email' in session and session['email'] == 'jefedpto@ciens.ucv.ve':
@@ -196,17 +192,3 @@ def modifyAula():
         form = RegistrationForm()
         return render_template('modifyAula.html', form=form, role = session['email'],usr_data=login_user)
     return redirect(url_for('home'))
-
-
-@app.route("/horarios")
-def getHorarios():
-    horarios = db.horarios.find()
-    callist = list()
-    for horario in horarios:
-        
-        callist.append({
-        'title': horario['title'], 
-        'start': horario['start'],
-        'end': horario['end']})
-    #print(cl)
-    return jsonify(callist)

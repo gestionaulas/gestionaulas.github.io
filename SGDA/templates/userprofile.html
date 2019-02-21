@@ -8,26 +8,33 @@
             </div>
             <!-- Card image -->
             <div class="w-50 mx-auto position-relative ">
-                <img class="card-img-top avatar" src="../static/img/perfil.jpg" alt="Card image">
+                {%if imagen in usr_data%}
+                <img class="card-img-top avatar imagen" src="{{usr_data['imagen']}}" alt="Card image">
+                {%else%}
+                <img class="card-img-top avatar imagen" src="../static/img/avatar.png" alt="Card image">
+                {%endif%}
             </div>
             </div>
             <!-- Card body -->
             <div class="card-body text-center">
-                <h5 class="card-title pt-0 pb-0 mb-2 font-weight-bold">{{usr_data['username']}}</h5>
+                {%if usr_data['nombre'] != '' and usr_data['apellido'] != ''%}
+                     <h5 class="card-title pt-0 pb-0 mb-2 font-weight-bold">{{usr_data['nombre']+' '+usr_data['apellido']}}</h5>
+                {%else%}
+                     <h5 class="card-title pt-0 pb-0 mb-2 font-weight-bold">Usuario</h5>
+                {%endif%}
                 <!-- Text -->
                 <ul class="clear">
+                    <li class="d-flex">
+                    <span><i class="fas fa-envelope"></i> Nombre de usuario: </span>
+                    <span style="margin-left:5px">{{usr_data['username']}}</span>
+                    </li>
                     <li class="d-flex">
                     <span><i class="fas fa-envelope"></i> Correo: </span>
                     <span style="margin-left:5px">{{usr_data['email']}}</span>
                     </li>
-    
                     <li class="d-flex">
                     <span><i class="fas fa-phone"></i> Teléfono: </span>
                     <span style="margin-left:5px">{{usr_data['telefono']}}</span>
-                    </li>
-                    <li class="d-flex">
-                        <span><i class="fas fa-book-open"></i>Escuela: </span>
-                        <span style="margin-left:5px">{{usr_data['escuela']}}</span>
                     </li>
                     <li class="d-flex">
                         <span><i class="fas fa-home"></i>Dirección: </span>
