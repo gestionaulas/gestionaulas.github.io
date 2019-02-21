@@ -203,7 +203,6 @@ def getHorarios():
     horarios = db.horarios.find()
     callist = list()
     for horario in horarios:
-        
         callist.append({
         'title': horario['title'], 
         'start': horario['start'],
